@@ -6,7 +6,7 @@ from .models import UserData, PersonalityTestItem, PersonalityTestAnswer, Person
     PersonalQuestionAnswer, PersonalQuestionUser, UserLog, Match
 
 
-"""class ProfileInline(admin.StackedInline):
+class ProfileInline(admin.StackedInline):
     model = UserData
     can_delete = False
     verbose_name_plural = 'UserData'
@@ -20,10 +20,10 @@ class CustomUserAdmin(UserAdmin):
         if not obj:
             return list()
         return super(CustomUserAdmin, self).get_inline_instances(request, obj)
-"""
 
-# admin.site.unregister(User)
-# admin.site.register(User, CustomUserAdmin)
+
+admin.site.unregister(User)
+admin.site.register(User, CustomUserAdmin)
 admin.site.register(PersonalQuestionUser)
 admin.site.register(PersonalQuestionAnswer)
 admin.site.register(PersonalQuestionContent)
